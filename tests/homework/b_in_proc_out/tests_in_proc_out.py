@@ -2,24 +2,20 @@ import sys
 import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../src')))
 
+
 import unittest
-from homework.b_in_proc_out.output import multiply_numbers
+from homework.b_in_proc_out.output import get_sales_tax_amount, get_tip_amount
 
-class TestMultiplyNumbers(unittest.TestCase):
-    def test_7x7(self):
-        self.assertEqual(multiply_numbers(7, 7), 49)
+class TestBillCalculations(unittest.TestCase):
 
-    def test_5x5(self):
-        self.assertEqual(multiply_numbers(5, 5), 25)
+    def test_get_sales_tax_amount(self):
+        self.assertAlmostEqual(get_sales_tax_amount(100), 6.75)
+        self.assertAlmostEqual(get_sales_tax_amount(50), 3.375)
 
-    def test_zero(self):
-        self.assertEqual(multiply_numbers(0, 5), 0)
-        self.assertEqual(multiply_numbers(5, 0), 0)
+    def test_get_tip_amount(self):
+        self.assertAlmostEqual(get_tip_amount(100, 0.2), 20)
+        self.assertAlmostEqual(get_tip_amount(50, 0.15), 7.5)
 
-    def test_negative(self):
-        self.assertEqual(multiply_numbers(-2, 3), -6)
-        self.assertEqual(multiply_numbers(2, -3), -6)
-        self.assertEqual(multiply_numbers(-2, -3), 6)
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()
+
