@@ -5,7 +5,7 @@ def get_options_ratio(option: float, total: float) -> float:
 
 
 def get_faculty_rating(ratio: float) -> str:
-if ratio < 0 or ratio >= 1:
+    if ratio < 0 or ratio >= 1:
         raise ValueError("Ratio must be between 0 and 1 (exclusive of 1.0)")        
     if 0 <= ratio < 0.6:
         return "Unacceptable"
