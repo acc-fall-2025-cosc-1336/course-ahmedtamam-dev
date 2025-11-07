@@ -2,8 +2,10 @@ import unittest
 import sys
 import os
 
-from tests.homework.h_strings import tests_strings
-suite = unittest.TestLoader().loadTestsFromModule(tests_strings)
+from tests.homework.g_lists_and_tuples import tests_lists_and_tuples
+suite = unittest.TestLoader().loadTestsFromModule(tests_lists_and_tuples)
+unittest.TextTestRunner(verbosity=2).run(suite)
+
 
 
 
