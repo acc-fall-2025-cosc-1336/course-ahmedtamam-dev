@@ -2,8 +2,8 @@ import unittest
 import sys
 import os
 
-from tests.homework.g_lists_and_tuples import tests_lists_and_tuples
-suite = unittest.TestLoader().loadTestsFromModule(tests_lists_and_tuples)
+from tests.homework.i_dictionaries_and_sets import test_dictionaries_and_set
+suite = unittest.TestLoader().loadTestsFromModule(test_dictionaries_and_sets)
 unittest.TextTestRunner(verbosity=2).run(suite)
 
 
